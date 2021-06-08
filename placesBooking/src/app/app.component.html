@@ -1,0 +1,48 @@
+<ion-app>
+  <ion-menu menuId='menu-start' slot="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menus</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list >
+        <ion-menu-toggle>
+          <ion-item lines="None" routerLink='places/tabs/offers'>
+            <ion-icon slot="start" name="open-outline"></ion-icon>
+            <ion-label>
+              Offers Places
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="None" routerLink='places/tabs/discover'>
+            <ion-icon slot="start" name="business"></ion-icon>
+            <ion-label>
+              Discover Places
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item lines="None" routerLink='bookings'>
+            <ion-icon slot="start" name="checkbox-outline"></ion-icon>
+            <ion-label>
+              Your Bookings
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item button lines="None" (click)="onLogout()">
+            <ion-icon slot="start" name="exit"></ion-icon>
+            <ion-label>
+              Logout
+            </ion-label>
+          </ion-item>
+          </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>
