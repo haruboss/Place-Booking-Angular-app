@@ -40,14 +40,14 @@ import { PlaceLocation } from './location.model';
 //   )
 // ]
 
-interface PlaceData {
+export interface PlaceData {
+  userID: string;
+  title: string;
+  description: string;
+  price: number;
+  imageUrl: string;
   availableFrom: Date;
   availableTo: Date;
-  description: string;
-  imageUrl: string;
-  price: number;
-  title: string;
-  userID: string;
   // location: PlaceLocation;
 }
 
@@ -142,10 +142,11 @@ export class PlacesService {
     title: string,
     description: string,
     price: number,
+    imageUrl: string,
     dateFrom: Date,
     dateTo: Date,
     // location: PlaceLocation,
-    // imageUrl: string
+
   ) {
     let generatedId: string;
     let fetchedUserId: string;
@@ -165,7 +166,8 @@ export class PlacesService {
           Math.random().toString(),
           title,
           description,
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Paris_Night.jpg/1024px-Paris_Night.jpg",
+          // "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Paris_Night.jpg/1024px-Paris_Night.jpg",
+          imageUrl,
           price,
           dateFrom,
           dateTo,

@@ -98,23 +98,23 @@ export class AuthService implements OnDestroy {
   }
 
   signup(email: string, password: string) {
-    //`https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${
-        //   environment.firebaseAPIKey
-        // }`
+
     return this.http
-      .post<AuthResponseData>("http://127.0.0.1:8000/user_auth_api/user/",
+      .post<AuthResponseData>(`https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${
+          environment.firebaseAPIKey
+        }`,
         { email: email, password: password, returnSecureToken: true }
       )
       .pipe(tap(this.setUserData.bind(this)));
   }
 
   login(email: string, password: string) {
-    //  `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${
-    //       environment.firebaseAPIKey
-    //     }`
+
     return this.http
-      .post<AuthResponseData>("http://127.0.0.1:8000/auth/login/",
-        { username: email, password: password, returnSecureToken: true }
+      .post<AuthResponseData>(`https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${
+          environment.firebaseAPIKey
+        }`,
+        { email: email, password: password, returnSecureToken: true }
       )
       .pipe(tap(this.setUserData.bind(this)));
   }

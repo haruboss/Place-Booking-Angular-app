@@ -14,6 +14,7 @@ import { AuthService } from '../../auth/auth.service';
   styleUrls: ['./discover.page.scss']
 })
 export class DiscoverPage implements OnInit, OnDestroy {
+  pl: Place[];
   loadedPlaces: Place[];
   listedLoadedPlaces: Place[];
   relevantPlaces: Place[];
@@ -46,13 +47,19 @@ export class DiscoverPage implements OnInit, OnDestroy {
   }
 
   onFilterUpdate(event: CustomEvent<SegmentChangeEventDetail>) {
+    //  this.placesService.fetchPlaces().subscribe(place => {
+    //    place.filter(placeUserId => { this.pl = placeUserId.userId})
+    // });
+    // console.log(this.pl + "pl value")
     this.authService.userId.pipe(take(1)).subscribe(userId => {
       if (event.detail.value === 'all') {
         this.relevantPlaces = this.loadedPlaces;
         this.listedLoadedPlaces = this.relevantPlaces.slice(1);
       } else {
-        this.relevantPlaces = this.loadedPlaces.filter(
-          place => place.userId !== userId
+        this.relevantPlaces = this.loadedPlaces.filter(place => {
+            place.userId !== userId
+            console.log(place.userId)
+          }
         );
         this.listedLoadedPlaces = this.relevantPlaces.slice(1);
       }

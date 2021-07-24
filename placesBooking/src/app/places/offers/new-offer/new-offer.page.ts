@@ -1,3 +1,4 @@
+import { PlaceData } from './../../places.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -56,10 +57,10 @@ export class NewOfferPage implements OnInit {
         updateOn: 'blur',
         validators: [Validators.required, Validators.min(1)]
       }),
-      // imageUrl: new FormControl(null, {
-      //   updateOn: 'blur',
-      //   validators: [Validators.required]
-      // }),
+      imageUrl: new FormControl(null, {
+        updateOn: 'blur',
+        validators: [Validators.required]
+      }),
       dateFrom: new FormControl(null, {
         updateOn: 'blur',
         validators: [Validators.required]
@@ -115,7 +116,7 @@ export class NewOfferPage implements OnInit {
                 this.form.value.title,
                 this.form.value.description,
                 +this.form.value.price,
-                // this.form.value.imageUrl,
+                this.form.value.imageUrl,
                 new Date(this.form.value.dateFrom),
                 new Date(this.form.value.dateTo),
 

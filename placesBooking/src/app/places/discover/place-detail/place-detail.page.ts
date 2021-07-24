@@ -135,7 +135,7 @@ export class PlaceDetailPage implements OnInit, OnDestroy {
                 .addBooking(
                   this.place.id,
                   this.place.title,
-                  // this.place.imageUrl,
+                  this.place.imageUrl,
                   data.firstName,
                   data.lastName,
                   data.guestNumber,

@@ -5,6 +5,8 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { HttpClientModule } from '@angular/common/http';
 
+// import { Storage, IonicStorageModule } from '@ionic/storage';
+import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';

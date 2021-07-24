@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.placesbookingapplication;
 
 import android.os.Bundle;
 

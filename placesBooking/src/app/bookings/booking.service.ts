@@ -12,7 +12,7 @@ interface BookingData {
   guestNumber: number;
   lastName: string;
   placeId: string;
-  // placeImage: string;
+  placeImage: string;
   placeTitle: string;
   userId: string;
 }
@@ -30,7 +30,7 @@ export class BookingService {
   addBooking(
     placeId: string,
     placeTitle: string,
-    // placeImage: string,
+    placeImage: string,
     firstName: string,
     lastName: string,
     guestNumber: number,
@@ -56,7 +56,7 @@ export class BookingService {
           placeId,
           fetchedUserId,
           placeTitle,
-          // placeImage,
+          placeImage,
           firstName,
           lastName,
           guestNumber,
@@ -125,7 +125,7 @@ export class BookingService {
                 bookingData[key].placeId,
                 bookingData[key].userId,
                 bookingData[key].placeTitle,
-                // bookingData[key].placeImage,
+                bookingData[key].placeImage,
                 bookingData[key].firstName,
                 bookingData[key].lastName,
                 bookingData[key].guestNumber,
